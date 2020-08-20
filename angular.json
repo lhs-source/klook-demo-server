@@ -24,7 +24,7 @@
               "frontend/assets"
             ],
             "styles": [
-              "frontend/styles.css"
+              "frontend/styles.scss"
             ],
             "scripts": []
           },
@@ -89,7 +89,7 @@
               "frontend/assets"
             ],
             "styles": [
-              "frontend/styles.css"
+              "frontend/styles.scss"
             ],
             "scripts": []
           }

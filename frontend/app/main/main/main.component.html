@@ -1,0 +1,18 @@
+<!-- header -->
+<app-header></app-header>
+
+<!-- body -->
+<div class="main-body">
+
+    <div class="main-contents">
+        Here is contents
+        <a [routerLink]="['/home']" routerLinkActive="router-link-active" >go home</a>
+        <router-outlet></router-outlet>
+    </div>
+
+    <!-- footer -->
+    <app-footer></app-footer>
+</div>
+
+<!-- navigation -->
+<app-navigation></app-navigation>

@@ -1,0 +1,19 @@
+
+@import "../main/main.component.scss";
+
+.main-navigation{
+    background-color: #b3d3ae;
+
+    height: 100%;
+    width: $navigation-width;
+    top : $header-height + $header-padding-vert * 2;
+    padding: $navigation-padding-vert $navigation-padding-hori;
+
+    border-right: 1px solid #8f8f8f;
+    box-shadow: 1px 0px 5px 0px #808080;
+
+    position: absolute;
+    overflow: hidden;
+    z-index: $navigation-z-index;
+
+}
