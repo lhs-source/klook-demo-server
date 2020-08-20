@@ -1,6 +1,6 @@
 @import "../main/main.component.scss";
 .main-header {
-    position: absolute;
+    position: fixed;
     //top : $header-height;
     z-index: $header-z-index;
     

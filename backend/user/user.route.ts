@@ -2,14 +2,18 @@ import * as express from 'express';
 
 import UserController from "./user.controller";
 
-export default function set_user_route(app) {
+export default function set_user_route() {
     const router = express.Router();
 
-    router.route('/login').post(UserController.login);
-    router.route('/users').get(UserController.getAll);
-    router.route('/users/count').get(UserController.count);
-    router.route('/user').post(UserController.insert);
-    router.route('/user/:id').get(UserController.get);
-    router.route('/user/:id').put(UserController.update);
-    router.route('/user/:id').delete(UserController.delete);
+    const user_cont = new UserController();
+
+    router.route('/login').post(user_cont.login);
+    router.route('/users').get(user_cont.getAll);
+    router.route('/users/count').get(user_cont.count);
+    router.route('/user').post(user_cont.insert);
+    router.route('/user/:id').get(user_cont.get);
+    router.route('/user/:id').put(user_cont.update);
+    router.route('/user/:id').delete(user_cont.delete);
+
+    return router;
 }

@@ -5,7 +5,7 @@ import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as path from 'path';
 
-
+import set_route_api from "./user/user.module";
 
 class Server {
     public static readonly PORT = 3000;
@@ -42,8 +42,12 @@ class Server {
             res.sendFile(path.join(__dirname, '../public/index.html'));
         });
 
-        set_router();
+        this.set_router();
     }
+    set_router() : void {
+        set_route_api(this.app);
+    }
+
 }
 
 let server = Server.bootstrap();
