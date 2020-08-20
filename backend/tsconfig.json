@@ -1,0 +1,9 @@
+// server/tsconfig.json
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../dist/server",
+        "baseUrl": "",
+        "module": "commonjs"
+    }
+}
