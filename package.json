@@ -11,7 +11,7 @@
     "server": "nodemon dist/server/app.js",
     "front": "ng serve",
     "mean_dev": "concurrently \"ng serve --open\" \"tsc -w -p backend\" \"nodemon dist/server/app.js\"",
-    "prod": "\"ng build -aot -prod && tsc -p backend && node dist/server/app.js\""
+    "mean_prod": "\"ng build -aot -prod && tsc -p backend && node dist/server/app.js\""
   },
   "private": true,
   "dependencies": {
@@ -23,6 +23,7 @@
     "@angular/platform-browser": "~9.1.3",
     "@angular/platform-browser-dynamic": "~9.1.3",
     "@angular/router": "~9.1.3",
+    "aot": "0.0.3",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "rxjs": "~6.5.4",

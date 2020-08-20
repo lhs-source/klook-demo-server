@@ -1,18 +1,18 @@
 
-$navigation-width : 48px;
+$navigation-width : 152px;
 $header-height : 48px;
 
 $header-padding-vert : 4px;
 $header-padding-hori : 8px;
 
 $navigation-padding-vert : 4px;
-$navigation-padding-hori : 8px;
+$navigation-padding-hori : 0px;
 
 $header-z-index : 10;
 $navigation-z-index : $header-z-index  - 1;
 
 .main-body {
-    background-color: #bbbbbb;
+    background-color: #f0f0f0;
 
     position: absolute;
     top : $header-height + $header-padding-vert * 2;
@@ -28,7 +28,7 @@ $navigation-z-index : $header-z-index  - 1;
         min-height : 90%;
         padding : 8px;
         
-        background-color: #c2c6ca;
+        background-color: #f3f3f3;
 
 
     }
