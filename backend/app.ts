@@ -5,6 +5,8 @@ import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as path from 'path';
 
+
+
 class Server {
     public static readonly PORT = 3000;
     // express
@@ -39,6 +41,8 @@ class Server {
         this.app.get('/*', function (req, res) {
             res.sendFile(path.join(__dirname, '../public/index.html'));
         });
+
+        set_router();
     }
 }
 
