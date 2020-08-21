@@ -8,7 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { RegisterMerchantComponent } from './register-merchant/register-merchant.component';
+
+import { MerchantModule } from './merchant/merchant.module';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,14 @@ import { RegisterMerchantComponent } from './register-merchant/register-merchant
     BodyComponent,
     FooterComponent,
     NavigationComponent,
-    RegisterMerchantComponent
   ],
   exports:[
     MainComponent
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MerchantModule
   ]
 })
 export class MainModule { }

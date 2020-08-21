@@ -3,7 +3,9 @@ import * as bodyParser from 'body-parser';
 
 // server
 import * as express from 'express';
+import * as morgan from 'morgan';
 import * as path from 'path';
+import * as http from "http";
 
 // mongodb
 import * as mongoose from 'mongoose';
@@ -15,6 +17,8 @@ class Server {
     public static readonly PORT = 3000;
     // express
     public app: any;
+    // httpserver
+    private server : any;
     // port
     private port: number;
     // mongodb
@@ -34,22 +38,29 @@ class Server {
         this.app.use(bodyParser.json({ limit: '50mb' }));
         this.app.use(bodyParser.urlencoded({ limit: '16mb', extended: false }));
         console.log("use bodyparser");
+        
+        this.app.use(morgan('dev'));
 
         this.app.get('/test', (req: express.Request, res: express.Response) => {
             res.send('Hello World!');
         });
 
-        this.app.listen(3000, () => {
-            console.log('Example app listening on port 3000!');
-        });
+        this.server = http.createServer(this.app);
+        this.server.listen(this.app.get('port'));
 
         // localhost:3000으로 접속하면 클라이언트로 index.html을 전송
+        this.app.set('port', (process.env.PORT || 3000));
         this.app.get('/*', function (req, res) {
             res.sendFile(path.join(__dirname, '../public/index.html'));
         });
 
         this.set_router();
         this.set_mongodb();
+        
+
+        // this.app.listen(this.app.get('port'), () => {
+        //     console.log('Example app listening on port 3000!');
+        // });
     }
     set_router(): void {
         set_user_api(this.app);

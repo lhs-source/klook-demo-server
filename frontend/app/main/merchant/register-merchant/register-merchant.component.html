@@ -1,0 +1,27 @@
+<div class="frame">
+    <h1>Add Merchant</h1>
+    <div class="addmer">
+        <form [formGroup]="merchant_form" (ngSubmit)="click_add()">
+            <label><i class="fas fa-signature"></i> NAME</label>
+            <p>
+                <input type="text" placeholder="name" formControlName="name" />
+            </p>
+            <label><i class="fas fa-store"></i> MERCHANT NUMBER</label>
+            <p>
+                <input type="text" placeholder="merchant no" formControlName="merchant_no" />
+            </p>
+            <label><i class="fas fa-phone"></i> PHONE NUMBER</label>
+            <p>
+                <input type="text" placeholder="phone no" formControlName="phone_no" />
+            </p>
+            <button type="submit" [disabled]="!merchant_form.valid">Add</button>
+        </form>
+    </div>
+
+
+    <div>
+        <div *ngFor="let merchant of merchants">
+            <p><label>NAME</label> {{merchant.name}}</p>
+        </div>
+    </div>
+</div>

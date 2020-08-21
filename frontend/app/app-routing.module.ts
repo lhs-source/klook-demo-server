@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BodyComponent } from './main/body/body.component';
-import { RegisterMerchantComponent } from './main/register-merchant/register-merchant.component';
+import { RegisterMerchantComponent } from './main/merchant/register-merchant/register-merchant.component';
 
 
 const routes: Routes = [

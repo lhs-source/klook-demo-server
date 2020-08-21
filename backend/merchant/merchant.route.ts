@@ -2,17 +2,22 @@ import * as express from 'express';
 
 import MerchantController from "./merchant.controller";
 
-export default function set_merchant_route() {
-    const router = express.Router();
+const mer_router = express.Router();
+const mer_cont = new MerchantController();
 
-    const mer_cont = new MerchantController();
+// mer_router.get('/', mer_cont.getAll)
+mer_router.get('/', (req, res) => {
+    console.log("here;;;");
+})
+            // .post('/', mer_cont.insert);
+            .post('/', (req, res) => {
+                console.log("here;;;;;;;;;;;");
+            });
+mer_router.get('/count', mer_cont.count);
+mer_router.get('/:id', mer_cont.get)
+            .put('/:id', mer_cont.update)
+            .delete('/:id', mer_cont.delete);
 
-    router.route('/merchants').get(mer_cont.getAll);
-    router.route('/merchants/count').get(mer_cont.count);
-    router.route('/merchant').post(mer_cont.insert);
-    router.route('/merchant/:id').get(mer_cont.get);
-    router.route('/merchant/:id').put(mer_cont.update);
-    router.route('/merchant/:id').delete(mer_cont.delete);
+console.log(mer_router);
 
-    return router;
-}
+export default mer_router;
