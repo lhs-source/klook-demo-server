@@ -1,0 +1,38 @@
+
+.frame{
+    margin: 16px;
+.addmer{
+    width:80%;
+    max-width: 720px;
+
+    label{
+        font-weight: 600;
+    }
+    input {
+        width :100%;
+        height : 24px;
+
+        padding: 4px;
+        margin:0px;
+    
+        border-radius: 2px;
+        border: solid 1px #194d19;
+    }
+    button{
+        width:100%;
+        height: 44px;
+
+        padding:4px;
+        margin: 0 auto;
+
+        border-radius: 2px;
+        border: solid 1px #194d19;
+
+        font-weight: 540;
+        font-size: 1em;
+        color: #ecf9ec;
+
+        background-color: #194d19;
+    }
+}
+}

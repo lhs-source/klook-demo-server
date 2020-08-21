@@ -2,7 +2,7 @@
 @import "../main/main.component.scss";
 
 .main-navigation{
-    background-color: #b3d3ae;
+    background-color: #061406;
 
     height: 100%;
     width: $navigation-width;
@@ -28,15 +28,16 @@
             margin:0;
             display : block;
 
-            background-color: #054405;
+            background-color: #194d19;
              
             a:hover{
-                background-color: rgb(25, 102, 25);
+                background-color: #2d862d;
             }
             a:active{
                 color: #0d3241;
                 font-weight: 600;
-                background-color: rgb(154, 207, 231);
+                background-color: #edf8ed;
+                color: #1c4a1c;
             }
             a{
                 width:100%;
@@ -44,7 +45,7 @@
                 display : inline-block;
                 vertical-align: middle;
 
-                color: #cbddcb;
+                color: #daf1da;
                 font-size : 0.9em;
                 font-weight: 400;
                 overflow-x: hidden;

@@ -1,7 +1,7 @@
 $page-z-index: 9999;
 
 .root {
-    position: absolute;
+    position: fixed;
     z-index: $page-z-index;
 
     width:100%;
