@@ -19,9 +19,23 @@
     </div>
 
 
-    <div>
-        <div *ngFor="let merchant of merchants">
-            <p><label>NAME</label> {{merchant.name}}</p>
-        </div>
+    <div class="list">
+        <table>
+            <div *ngFor="let merchant of merchants">
+                <tr>
+                    <td rowspan="3"><i class="fas fa-genderless"></i></td>
+                    <td><label>NAME</label> </td>
+                    <td>{{merchant.name}}</td>
+                </tr>
+                <tr>
+                    <td><label>MERCHANT NO</label></td>
+                    <td>{{merchant.merchant_no}}</td>
+                </tr>
+                <tr>
+                    <td><label>PHONE NO</label></td>
+                    <td>{{merchant.phone_no}}</td>
+                </tr>
+            </div>
+        </table>
     </div>
 </div>

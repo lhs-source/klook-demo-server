@@ -35,4 +35,25 @@
         background-color: #194d19;
     }
 }
+.list{
+    margin-top: 8px;
+    label{
+        padding:2px;
+
+        font-size: 0.95em;
+        font-weight: 550;
+
+        // border: 1px solid #194d19;
+        // border-radius: 2px;
+    }
+    p {
+        margin:2px;
+    }
+    tr{
+        margin: 2px 0;
+        td{
+            padding: 2px 4px;
+        }
+    }
+}
 }
