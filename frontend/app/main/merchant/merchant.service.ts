@@ -34,8 +34,8 @@ export class MerchantService {
     };
     let jsonstr = JSON.stringify(merchant);
     return this.http.post(request.url, jsonstr, this.httpOptions).pipe(
-      tap((new_merchant: Merchant) => console.log(`added hero w/ name = ${new_merchant.name}`)),
-      catchError(this.handleError<Merchant>('addHero'))
+      tap((new_merchant: Merchant) => console.log(`insert_merchant w/ name = ${new_merchant.name}`)),
+      catchError(this.handleError<Merchant>('insert_merchant'))
     );
   }
 

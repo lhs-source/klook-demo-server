@@ -1,0 +1,15 @@
+.back-image{
+    // background-color: #DDD;
+    background-image : url("http://i.imgur.com/ALmo7sb.jpg");
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-size: cover;
+
+    height : 960px;
+    width : 100%;
+
+    position : absolute;
+    left : 0;
+    // top : 50px;
+    z-index: -1;
+}

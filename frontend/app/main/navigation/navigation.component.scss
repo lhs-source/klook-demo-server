@@ -10,11 +10,16 @@
     padding: $navigation-padding-vert $navigation-padding-hori;
 
     border-right: 1px solid #8f8f8f;
-    box-shadow: 1px 0px 5px 0px #808080;
+    box-shadow: 1px 0px 5px 0px #194d19;
 
     position: fixed;
     overflow: hidden;
     z-index: $navigation-z-index;
+
+    h3{
+        color:#edf8ed;
+        margin-left: 12px;
+    }
 
     ul {
         color: #cbddcb;

@@ -12,7 +12,7 @@ $header-z-index : 10;
 $navigation-z-index : $header-z-index  - 1;
 
 .main-body {
-    background-color: #f0f0f0;
+    // background-color: #f0f0f0;
 
     position: absolute;
     top : $header-height + $header-padding-vert * 2;
@@ -26,9 +26,9 @@ $navigation-z-index : $header-z-index  - 1;
         position: relative;
 
         min-height : 90%;
-        padding : 8px;
+        // padding : 8px;
         
-        background-color: #ffffff;
+        // background-color: #ffffff;
 
 
     }
