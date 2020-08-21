@@ -50,13 +50,20 @@ class Server {
 
         // localhost:3000으로 접속하면 클라이언트로 index.html을 전송
         this.app.set('port', (process.env.PORT || 3000));
-        this.app.get('/*', function (req, res) {
-            res.sendFile(path.join(__dirname, '../public/index.html'));
-        });
+
+        this.set_mongodb();
 
         this.set_router();
-        this.set_mongodb();
+
+        this.app.get('/*', function (req, res) {
+            res.sendFile(path.join(__dirname, '../public/index.html'));
+        });      
         
+        // listen
+        this.app.listen(this.app.get('port'), () => {
+        console.log('Angular Full Stack listening on port ' + this.app.get('port'));
+        
+        });
 
         // this.app.listen(this.app.get('port'), () => {
         //     console.log('Example app listening on port 3000!');
