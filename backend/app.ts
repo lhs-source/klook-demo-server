@@ -5,7 +5,11 @@ import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as path from 'path';
 
-import set_route_api from "./user/user.module";
+// mongodb
+import * as mongoose from 'mongoose';
+
+import set_user_api from "./user/user.module";
+import set_merchant_api from "./merchant/merchant.module";
 
 class Server {
     public static readonly PORT = 3000;
@@ -13,6 +17,8 @@ class Server {
     public app: any;
     // port
     private port: number;
+    // mongodb
+    private db: any;
 
     public static bootstrap(): Server {
         return new Server();
@@ -43,9 +49,38 @@ class Server {
         });
 
         this.set_router();
+        this.set_mongodb();
     }
-    set_router() : void {
-        set_route_api(this.app);
+    set_router(): void {
+        set_user_api(this.app);
+        set_merchant_api(this.app);
+    }
+    set_mongodb(): void {
+        mongoose.connect("mongodb://localhost/pointproject", function (err) {
+            if (err) {
+                console.error("Error! " + err);
+            }
+            console.error("Success! ");
+        }
+        );
+        this.db = mongoose.connection;
+
+        (<any>mongoose).Promise = global.Promise;
+
+        this.db.on('error', console.error.bind(console, 'connection error:'));
+        this.db.once('open', () => {
+            console.log('Connected to MongoDB');
+            this.app.use(
+                function (req, res, next) {
+                    res.header('Acess-Control-Allow-Origin', '*');
+                    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
+                    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+                    (req.method === 'OPTIONS') ?
+                        res.send(200) :
+                        next();
+                }
+            );
+        });
     }
 
 }
