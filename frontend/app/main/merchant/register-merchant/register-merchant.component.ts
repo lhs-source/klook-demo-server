@@ -26,7 +26,6 @@ export class RegisterMerchantComponent implements OnInit {
   }
 
   click_add(){
-    console.log("herererere");
     this.insert_merchant();
   }
 
@@ -34,16 +33,16 @@ export class RegisterMerchantComponent implements OnInit {
   get_all_merchants(){
     this.merchant_service.get_all_merchants().subscribe(
       res => {
-        console.log('here1');
+        console.log('success to get all merchants');
         console.log(res);
         this.merchants = res;
       },
       error => {
-        console.log('here2');
+        console.log('fail to get all merchants');
         console.log(error);
       },
       () => {
-        console.log('here2');
+        console.log('finally');
       }
     );
   }
@@ -52,12 +51,16 @@ export class RegisterMerchantComponent implements OnInit {
     console.log(this.merchant_form.value);
     this.merchant_service.insert_merchant(this.merchant_form.value).subscribe(
       res => {
-        console.log('here1');
+        console.log('success to insert');
         console.log(res);
+        this.merchants.push(res); 
       },
       error => {
-        console.log('here2');
+        console.log('fail to insert');
         console.log(error);
+      },
+      () => {
+        console.log('finally');
       }
     );
   }

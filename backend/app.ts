@@ -18,7 +18,7 @@ class Server {
     // express
     public app: any;
     // httpserver
-    private server : any;
+    private server: any;
     // port
     private port: number;
     // mongodb
@@ -38,7 +38,7 @@ class Server {
         this.app.use(bodyParser.json({ limit: '50mb' }));
         this.app.use(bodyParser.urlencoded({ limit: '16mb', extended: false }));
         console.log("use bodyparser");
-        
+
         this.app.use(morgan('dev'));
 
         this.app.get('/test', (req: express.Request, res: express.Response) => {
@@ -48,8 +48,6 @@ class Server {
         this.server = http.createServer(this.app);
         this.server.listen(this.app.get('port'));
 
-        // localhost:3000으로 접속하면 클라이언트로 index.html을 전송
-        this.app.set('port', (process.env.PORT || 3000));
 
         this.set_mongodb();
 
@@ -57,12 +55,14 @@ class Server {
 
         this.app.get('/*', function (req, res) {
             res.sendFile(path.join(__dirname, '../public/index.html'));
-        });      
-        
+        });
+
+        // localhost:3000으로 접속하면 클라이언트로 index.html을 전송
+        this.app.set('port', (process.env.PORT || 3000));
         // listen
         this.app.listen(this.app.get('port'), () => {
-        console.log('Angular Full Stack listening on port ' + this.app.get('port'));
-        
+            console.log('Angular Full Stack listening on port ' + this.app.get('port'));
+
         });
 
         // this.app.listen(this.app.get('port'), () => {

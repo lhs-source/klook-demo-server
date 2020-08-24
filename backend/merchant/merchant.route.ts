@@ -11,7 +11,4 @@ mer_router.get('/count', mer_cont.count);
 mer_router.get('/:id', mer_cont.get)
             .put('/:id', mer_cont.update)
             .delete('/:id', mer_cont.delete);
-
-console.log(mer_router);
-
 export default mer_router;

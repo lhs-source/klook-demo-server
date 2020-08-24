@@ -42,7 +42,6 @@ abstract class BaseContrlloer {
             if (err) { return console.error(err); }
             res.json(obj);
         });
-        console.log("get");
     };
 
     // Update by id
