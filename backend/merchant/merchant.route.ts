@@ -2,8 +2,8 @@ import * as express from 'express';
 
 import MerchantController from "./merchant.controller";
 
-const mer_router = express.Router();
-const mer_cont = new MerchantController();
+let mer_router = express.Router();
+let mer_cont = new MerchantController();
 
 mer_router.get('/', mer_cont.getAll)
             .post('/', mer_cont.insert);
