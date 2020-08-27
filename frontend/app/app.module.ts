@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 // main page module
 import { MainModule } from './main/main.module';
 import { MerchantService } from './main/merchant/merchant.service';
+import { QrService } from './main/qr/qr.service';
 
 // login
 import { LoginModule } from './login/login.module';
@@ -25,7 +26,7 @@ import { LoginModule } from './login/login.module';
     MainModule,
     LoginModule
   ],
-  providers: [MerchantService],
+  providers: [MerchantService, QrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

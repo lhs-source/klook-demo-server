@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
 import { MerchantModule } from './merchant/merchant.module';
+import { QrModule } from './qr/qr.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MerchantModule } from './merchant/merchant.module';
   imports: [
     CommonModule,
     AppRoutingModule,
-    MerchantModule
+    MerchantModule,
+    QrModule,
   ]
 })
 export class MainModule { }

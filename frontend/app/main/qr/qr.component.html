@@ -1,0 +1,16 @@
+<div class="frame">
+    <h1>Generate QR Code</h1>
+    <p>
+        <label>URL data</label>
+    </p>
+    <form [formGroup]="qr_form">
+        <p>
+            <input type="text" formControlName="qr_input">
+            <!-- <input ([ngModel])="qr_input"> -->
+        </p>
+        <p>
+            <button (click)="get_qrcode()">create</button>
+        </p>
+    </form>
+    <p><img [src]="qr_data"></p>
+</div>
