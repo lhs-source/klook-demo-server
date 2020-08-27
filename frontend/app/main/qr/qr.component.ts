@@ -12,12 +12,13 @@ export class QrComponent implements OnInit {
   constructor(private qr_service: QrService) { }
 
   qr_form = new FormGroup({
-    qr_input : new FormControl('')
+    qr_input: new FormControl('')
   });
   // qr_input = '';
 
   // qr_input = "";
   qr_data = "";
+  barcode_data = "";
 
   ngOnInit(): void {
     // this.get_qrcode();
@@ -25,7 +26,7 @@ export class QrComponent implements OnInit {
 
   get_qrcode() {
     // let rand_num = Math.floor(Math.random() * 100) + 1;
-console.log(this.qr_form.value.qr_input);
+    console.log(this.qr_form.value.qr_input);
     this.qr_service.get_qrcode(this.qr_form.value.qr_input).subscribe(
       response => {
         console.log("get qrcode ok ");
@@ -37,7 +38,22 @@ console.log(this.qr_form.value.qr_input);
         console.log(error);
       }
     )
+  }
 
-
+  
+  get_barcode() {
+    // let rand_num = Math.floor(Math.random() * 100) + 1;
+    console.log(this.qr_form.value.qr_input);
+    this.qr_service.get_barcode(this.qr_form.value.qr_input).subscribe(
+      response => {
+        console.log("get barcode ok ");
+        console.log(response);
+        this.barcode_data = String(response);
+      },
+      error => {
+        console.log("get barcode error ");
+        console.log(error);
+      }
+    )
   }
 }

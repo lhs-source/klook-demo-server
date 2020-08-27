@@ -9,8 +9,10 @@
             <!-- <input ([ngModel])="qr_input"> -->
         </p>
         <p>
-            <button (click)="get_qrcode()">create</button>
+            <button (click)="get_qrcode()">create QRcode</button>
+            <button (click)="get_barcode()">create Barcode</button>
         </p>
     </form>
     <p><img [src]="qr_data"></p>
+    <p><img [src]="barcode_data"></p>
 </div>

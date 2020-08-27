@@ -13,6 +13,7 @@ import * as mongoose from 'mongoose';
 import set_user_api from "./user/user.module";
 import set_merchant_api from "./merchant/merchant.module";
 import set_qr_api from "./qrcode/qr.module";
+import set_bar_api from './barcode/barcode.module';
 
 class Server {
     public static readonly PORT = 3000;
@@ -74,6 +75,7 @@ class Server {
         set_user_api(this.app);
         set_merchant_api(this.app);
         set_qr_api(this.app);
+        set_bar_api(this.app);
     }
     set_mongodb(): void {
         mongoose.connect("mongodb://localhost/pointproject", function (err) {
