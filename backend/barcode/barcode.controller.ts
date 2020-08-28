@@ -4,7 +4,9 @@ import { Canvas } from 'canvas';
 export default class BarcodeController {
     create_barcode = (req, res) =>{
         let canvas = new Canvas(400, 100);
-        JsBarcode(canvas, req.body.data, {displayValue: false});
+        // If you want to print value under the barcode, 
+        //  set `displayValue` to `false`.
+        JsBarcode(canvas, req.body.data, {displayValue: true});
         canvas.toDataURL((err, data)=>{
             // console.log("input = " + req.body.data);
             // console.log("barcode = " + data);
