@@ -2,20 +2,22 @@ import * as qrcode from 'qrcode';
 
 export default class QRController {
     create_qr = (req, res) =>{
-        console.log(qrcode);
-        console.log(req.body.data);
-        qrcode.toDataURL(req.body.data, (err, url) => {
-            console.log("error = " + err);
-            console.log("url = " + url);
-            if(url == undefined){
+        qrcode.toDataURL(req.body.data, (err, data) => {
+            // console.log("input = " + req.body.data);
+            // console.log("url = " + data);
+            if(err){
+                console.log("error = " + err);
+                throw err;
+            }
+            if(data == undefined){
                 res.writeHead(500);
                 res.end("");
             }else{
                 res.writeHead(200, {
                     "Content-Type" : "image/png",
-                    "Content-Length" : url.length
+                    "Content-Length" : data.length
                 });
-                res.end(url);
+                res.end(data);
             }
         });
     };

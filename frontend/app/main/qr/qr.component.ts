@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QrService } from './qr.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-qr',
@@ -12,7 +12,7 @@ export class QrComponent implements OnInit {
   constructor(private qr_service: QrService) { }
 
   qr_form = new FormGroup({
-    qr_input: new FormControl('')
+    qr_input: new FormControl('', Validators.required)
   });
   // qr_input = '';
 
@@ -26,11 +26,14 @@ export class QrComponent implements OnInit {
 
   get_qrcode() {
     // let rand_num = Math.floor(Math.random() * 100) + 1;
-    console.log(this.qr_form.value.qr_input);
+    // console.log(this.qr_form.value.qr_input);
+    if(!this.qr_form.value.qr_input){
+      return;
+    }
     this.qr_service.get_qrcode(this.qr_form.value.qr_input).subscribe(
       response => {
-        console.log("get qrcode ok ");
-        console.log(response);
+        // console.log("get qrcode ok ");
+        // console.log(response);
         this.qr_data = String(response);
       },
       error => {
@@ -39,15 +42,17 @@ export class QrComponent implements OnInit {
       }
     )
   }
-
   
   get_barcode() {
     // let rand_num = Math.floor(Math.random() * 100) + 1;
-    console.log(this.qr_form.value.qr_input);
+    // console.log(this.qr_form.value.qr_input);
+    if(!this.qr_form.value.qr_input){
+      return;
+    }
     this.qr_service.get_barcode(this.qr_form.value.qr_input).subscribe(
       response => {
-        console.log("get barcode ok ");
-        console.log(response);
+        // console.log("get barcode ok ");
+        // console.log(response);
         this.barcode_data = String(response);
       },
       error => {

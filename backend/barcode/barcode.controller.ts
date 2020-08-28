@@ -1,6 +1,3 @@
-// import barcode = require('barcode');
-// import * as Barc from 'barc';
-// import * as path from 'path';
 import * as JsBarcode from 'jsbarcode';
 import { Canvas } from 'canvas';
 
@@ -9,7 +6,12 @@ export default class BarcodeController {
         let canvas = new Canvas(400, 100);
         JsBarcode(canvas, req.body.data);
         canvas.toDataURL((err, data)=>{
-            console.log("barcode = " + data);
+            // console.log("input = " + req.body.data);
+            // console.log("barcode = " + data);
+            if(err){
+                console.log("error = " + err);
+                throw err;
+            }
             res.writeHead(200, {
                 "Content-Type" : "image/png",
                 "Content-Length" : data.length

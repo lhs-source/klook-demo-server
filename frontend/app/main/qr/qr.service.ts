@@ -20,8 +20,7 @@ export class QrService {
     let request = {
       url: "/api/qr"
     }
-    // let input_data = JSON.stringify(input);
-    console.log(input);
+    // console.log(input);
     return this.http.post(request.url, {data :input} , {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -37,8 +36,7 @@ export class QrService {
     let request = {
       url: "/api/barcode"
     }
-    // let input_data = JSON.stringify(input);
-    console.log(input);
+    // console.log(input);
     return this.http.post(request.url, {data :input} , {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

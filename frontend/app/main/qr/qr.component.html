@@ -7,10 +7,13 @@
         <p>
             <input type="text" formControlName="qr_input">
             <!-- <input ([ngModel])="qr_input"> -->
+            <span class="danger" *ngIf="qr_form.invalid"> please input data</span>
         </p>
         <p>
-            <button (click)="get_qrcode()">create QRcode</button>
-            <button (click)="get_barcode()">create Barcode</button>
+            <button (click)="get_qrcode()">create QRcode <i class="fas fa-qrcode"></i> </button>
+        </p>
+        <p>
+            <button (click)="get_barcode()">create Barcode <i class="fas fa-barcode"></i> </button>
         </p>
     </form>
     <p><img [src]="qr_data"></p>
