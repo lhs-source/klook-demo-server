@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TransactionService } from './transaction.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { TransactionService } from './transaction.service';
   styleUrls: ['./transactions.component.scss']
 })
 export class TransactionsComponent implements OnInit {
+  @ViewChild('frame', {static:true}) frame : ElementRef;
 
   transactions = [];
   selected_transaction : any;
@@ -20,6 +21,7 @@ export class TransactionsComponent implements OnInit {
       },
       err=>{},
     );
+    // console.log(this.frame.nativeElement);
   }
 
   onClickItem(event, index){

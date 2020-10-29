@@ -1,6 +1,6 @@
 <div style="margin:32px;"></div>
 
-<div class="frame">
+<div class="frame" #frame>
     <div *ngIf="selected_transaction" class="selected-table">
         <div style="display: grid; grid-template-columns: 50% 50%; grid-auto-flow: row;">
             <div class="item" style="grid-row:1; grid-column: 1 / 3; margin-bottom: 16px;">
@@ -8,12 +8,12 @@
                 <p style="font-size: 1.1em; font-weight: 600;">{{selected_transaction.merchant}}</p>
             </div>
             <div class="item">
-                <p><label>분류</label></p>
-                <p>{{selected_transaction.class}}</p>
+                <p><label>날짜</label></p>
+                <p>{{selected_transaction.date | date:'yyyy년 MM월 dd일 HH시 mm분'}}</p>
             </div>
             <div class="item">
-                <p><label>설명</label></p>
-                <p>{{selected_transaction.description}}</p>
+                <p><label>국가</label></p>
+                <p>{{selected_transaction.country}}</p>
             </div>
             <div class="item">
                 <p><label>포인트</label></p>
@@ -30,12 +30,12 @@
                 <p style="color:green;">+{{selected_transaction.save_point}} P</p>
             </div>
             <div class="item">
-                <p><label>날짜</label></p>
-                <p>{{selected_transaction.date}}</p>
+                <p><label>분류</label></p>
+                <p>{{selected_transaction.class}}</p>
             </div>
             <div class="item">
-                <p><label>국가</label></p>
-                <p>{{selected_transaction.country}}</p>
+                <p><label>설명</label></p>
+                <p>{{selected_transaction.description}}</p>
             </div>
             <div class="item">
                 <p><label>Taxfree 유무</label></p>
