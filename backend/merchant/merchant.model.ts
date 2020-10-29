@@ -6,6 +6,6 @@ const merchantSchema = new mongoose.Schema({
   phone_no: Number
 });
 
-const Merchant = mongoose.model('Merchant', merchantSchema);
+const Merchant = mongoose.model('merchants', merchantSchema);
 
 export default Merchant;

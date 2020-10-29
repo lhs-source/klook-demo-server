@@ -14,6 +14,8 @@ import set_user_api from "./user/user.module";
 import set_merchant_api from "./merchant/merchant.module";
 import set_qr_api from "./qrcode/qr.module";
 import set_bar_api from './barcode/barcode.module';
+import set_rule_api from './bankbe_rule/bankbe_rule.module';
+import set_tr_api from './transaction/transaction.module';
 
 class Server {
     public static readonly PORT = 3000;
@@ -76,6 +78,8 @@ class Server {
         set_merchant_api(this.app);
         set_qr_api(this.app);
         set_bar_api(this.app);
+        set_rule_api(this.app);
+        set_tr_api(this.app);
     }
     set_mongodb(): void {
         mongoose.connect("mongodb://localhost/pointproject", function (err) {

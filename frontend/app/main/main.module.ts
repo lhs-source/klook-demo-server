@@ -11,6 +11,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 
 import { MerchantModule } from './merchant/merchant.module';
 import { QrModule } from './qr/qr.module';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { QrModule } from './qr/qr.module';
     BodyComponent,
     FooterComponent,
     NavigationComponent,
+    TransactionsComponent,
   ],
   exports:[
     MainComponent

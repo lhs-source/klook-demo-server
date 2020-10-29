@@ -5,6 +5,7 @@ abstract class BaseContrlloer {
     getAll = (req, res) => {
         console.log("getAll");
         this.model.find({}, (err, docs) => {
+            console.log(docs);
             if (err) { return console.error(err); }
             res.json(docs);
         });

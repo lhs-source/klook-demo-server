@@ -1,0 +1,91 @@
+<p>transactions works!</p>
+
+<table class="selected-table">
+    <div *ngIf="selected_transaction">
+        <tr>
+            <td rowspan="12"><i class="fas fa-genderless"></i></td>
+            <td><label>type</label> </td>
+            <td>{{selected_transaction.type}}</td>
+        </tr>
+        <tr>
+            <td><label>Class</label></td>
+            <td>{{selected_transaction.class}}</td>
+        </tr>
+        <tr>
+            <td><label>merchant</label></td>
+            <td>{{selected_transaction.merchant}}</td>
+        </tr>
+        <tr>
+            <td><label>point</label></td>
+            <td>{{selected_transaction.point}}</td>
+        </tr>
+        <tr>
+            <td><label>curr</label></td>
+            <td>{{selected_transaction.curr}}</td>
+        </tr>
+        <tr>
+            <td><label>country</label></td>
+            <td>{{selected_transaction.country}}</td>
+        </tr>
+        <tr>
+            <td><label>date</label></td>
+            <td>{{selected_transaction.date}}</td>
+        </tr>
+        <tr>
+            <td><label>description</label></td>
+            <td>{{selected_transaction.description}}</td>
+        </tr>
+        <tr>
+            <td><label>description</label></td>
+            <td>{{selected_transaction.date}}</td>
+        </tr>
+        <tr>
+            <td><label>taxfree</label></td>
+            <td>{{selected_transaction.taxfree}}</td>
+        </tr>
+        <tr>
+            <td><label>utu</label></td>
+            <td>{{selected_transaction.utu}}</td>
+        </tr>
+        <tr>
+            <td><label>save_point</label></td>
+            <td>{{selected_transaction.save_point}}</td>
+        </tr>
+    </div>
+</table>
+
+
+<div class="list">
+    <table class="list-table">
+        <thead calss="header">
+            <th><label>-</label></th>
+            <th><label>type</label></th>
+            <th><label>Class</label></th>
+            <th><label>merchant</label></th>
+            <th><label>point</label></th>
+            <th><label>curr</label></th>
+            <th><label>country</label></th>
+            <th><label>date</label></th>
+            <th><label>description</label></th>
+            <th><label>taxfree</label></th>
+            <th><label>utu</label></th>
+            <th><label>save_point</label></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tr of transactions; let index = index;" class="item" (click)="onClickItem($event, index)">
+                <td><i class="fas fa-genderless"></i></td>
+                <td>{{tr.type}}</td>
+                <td>{{tr.class}}</td>
+                <td>{{tr.merchant}}</td>
+                <td>{{tr.point}}</td>
+                <td>{{tr.curr}}</td>
+                <td>{{tr.country}}</td>
+                <td>{{tr.date | date:'yyyy년 MM월 dd일'}}</td>
+                <td>{{tr.description}}</td>
+                <td>{{tr.taxfree}}</td>
+                <td>{{tr.utu}}</td>
+                <td>{{tr.save_point}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
