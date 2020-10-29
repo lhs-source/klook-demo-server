@@ -1,55 +1,85 @@
+$maxwidth:720px;
 
-.selected-table{
-    label{
-        padding:2px;
 
-        font-size: 0.95em;
-        font-weight: 550;
+.frame{
+    max-width:$maxwidth; 
+    margin: 0 auto;
 
-        // border: 1px solid #194d19;
-        // border-radius: 2px;
+    .selected-table{
+        background-color: #eee;
+        padding:16px;
+
+        p{margin:0;}
+    
+        label{
+            padding:2px;
+    
+            font-size: 1.1em;
+            font-weight: 550;
+    
+            // border: 1px solid #194d19;
+            // border-radius: 2px;
+        }
+        .item{
+            margin:4px 0;
+        }
     }
-    tr{
-        margin:4px;
-        margin-left: 16px;
+    
+    
+    .list{
+        p{
+            margin:0;
+        }
+        .item{
+            // margin: 16px 0;
+            padding:16px;
+    
+            display: flex; 
+            flex-direction: row ; 
+            justify-content: space-between; 
+            align-items: flex-start;
+    
+            .merchant{
+                font-size:1.3em;
+                font-weight: 500;
+            }
+            .date{
+                // font-weight: 550;
+            }
+            .taxfree{
+                background-color: rgb(100, 15, 15); 
+                color:whitesmoke; 
+                padding:0px 4px 3px 4px;
+                
+                border-radius: 4px; 
+                font-size: 0.9em; 
+                font-weight: 550;
+            }
+            .utu{
+                background-color: rgb(199, 230, 255); 
+                color:black; 
+                padding:0px 4px 3px 4px;
+    
+                border-radius: 4px;
+                font-size: 0.9em; 
+                font-weight: 550;
+            }
+    
+            &:hover{
+                background-color: #ccc;
+                transition: 250ms;
+            }
+        }
     }
 }
 
 
-.list{
-    margin-top: 8px;
-    label{
-        padding:2px;
 
-        font-size: 0.95em;
-        font-weight: 550;
 
-        // border: 1px solid #194d19;
-        // border-radius: 2px;
-    }
-    p {
-        margin:2px;
-    }
-    .list-table{
-        width: 88%; 
-        margin: 16px; 
-        border: 1px solid #aaa; 
-        padding:16;
 
-        .header{
-            border: 1px solid #aaa;
-            background-color: #f4f4f4;
-        }
-        .item{
-            padding:16px;
-            &:hover{
-                background-color: #f4f4f4;
-            }
-            td{
-                border:none;
-                padding: 8px;
-                text-align: center;
-            }
-        }
-    }
+.positive{
+    color:red;
+}
+.negative{
+    color:blue;
 }
