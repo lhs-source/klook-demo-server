@@ -16,7 +16,7 @@ $navigation-z-index : $header-z-index  - 1;
 
     position: absolute;
     top : $header-height + $header-padding-vert * 2;
-    left: $navigation-width + $navigation-padding-hori * 2;
+    // left: $navigation-width + $navigation-padding-hori * 2;
     
     width : 100%;
     height: 100%;
