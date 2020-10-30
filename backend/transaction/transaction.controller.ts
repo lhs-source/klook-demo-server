@@ -8,7 +8,7 @@ export default class TransactionController extends BaseContrlloer {
     //  sort 1 : inc
     //  sort -1 : dec
     getAllOrderByDate = (req, res) => {
-        console.log("getAll");
+        console.log("get All");
         this.model.find(
             {},
             null,
@@ -19,4 +19,35 @@ export default class TransactionController extends BaseContrlloer {
                 res.json(docs);
             });
     };
+    insertMultiTransactions = (req, res) =>{
+        console.log("insert all", req.body);
+        // let items = 
+        this.model.insertMany(req.body, {ordered:false}, function(err, item){
+            if (err && err.code === 11000) {
+                res.sendStatus(400);
+            }
+            if (err) {
+                return console.error(err);
+            }
+            res.status(200).json(item);
+        })
+        // const obj = new this.model(res.body);
+        // obj.save((err, item) => {
+        //     // 11000 is the code for duplicate key error
+        //     if (err && err.code === 11000) {
+        //         res.sendStatus(400);
+        //     }
+        //     if (err) {
+        //         return console.error(err);
+        //     }
+        //     res.status(200).json(item);
+        // });
+    }
+    deleteAll = (req, res)=>{
+        console.log("delete all");
+        this.model.remove({}, (err) => {
+            if (err) { return console.error(err); }
+            res.sendStatus(200);
+        });
+    }
 }
