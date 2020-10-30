@@ -7,7 +7,7 @@ import { TransactionsComponent } from './main/transactions/transactions.componen
 
 
 const routes: Routes = [
-  {path:'', component : BodyComponent},
+  {path:'', redirectTo:'transaction', pathMatch:"full"},
   {path : 'home', component : BodyComponent},
   {path : 'reg-merchant', component : RegisterMerchantComponent},
   {path : 'qr', component : QrComponent},
