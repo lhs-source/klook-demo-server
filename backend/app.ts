@@ -37,7 +37,7 @@ class Server {
         // 포트는 8080 - socket
         this.app.set('port', (process.env.PORT || 9999));
         // /로 시작되는 경로에서 모두 실행
-        this.app.use('/', express.static(path.join(__dirname, '../public')));
+        this.app.use('/', express.static(path.join(__dirname, '../lhspage')));
         // use bodyparser middleware
         this.app.use(bodyParser.json({ limit: '50mb' }));
         this.app.use(bodyParser.urlencoded({ limit: '16mb', extended: false }));
@@ -57,9 +57,10 @@ class Server {
 
         this.set_router();
 
-        this.app.get('/*', function (req, res) {
-            res.sendFile(path.join(__dirname, '../public/index.html'));
-        });
+        // this.app.use(express.static(path.join(__dirname,'../lhspage')));
+        // this.app.get('*', function (req, res) {
+        //     res.sendFile(path.join(__dirname, '../lhspage/index.html'));
+        // });
 
         // localhost:3000으로 접속하면 클라이언트로 index.html을 전송
         this.app.set('port', (process.env.PORT || 3000));

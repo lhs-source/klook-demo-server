@@ -11,7 +11,7 @@
     "server": "nodemon dist/server/app.js",
     "front": "ng serve",
     "mean_dev": "concurrently \"ng serve --open\" \"tsc -w -p backend\" \"nodemon dist/server/app.js\"",
-    "mean_prod": "\"ng build -aot -prod && tsc -p backend && node dist/server/app.js\""
+    "mean_prod": "\"ng build --aot --prod && tsc -p backend && node dist/server/app.js\""
   },
   "private": true,
   "dependencies": {
