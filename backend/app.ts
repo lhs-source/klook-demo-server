@@ -58,9 +58,9 @@ class Server {
         this.set_router();
 
         // this.app.use(express.static(path.join(__dirname,'../lhspage')));
-        // this.app.get('*', function (req, res) {
-        //     res.sendFile(path.join(__dirname, '../lhspage/index.html'));
-        // });
+        this.app.get('*', function (req, res) {
+            res.sendFile(path.join(__dirname, '../lhspage/index.html'));
+        });
 
         // localhost:3000으로 접속하면 클라이언트로 index.html을 전송
         this.app.set('port', (process.env.PORT || 3000));
