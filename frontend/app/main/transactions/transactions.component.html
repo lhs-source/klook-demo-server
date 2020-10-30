@@ -27,7 +27,7 @@
             </div>
             <div class="item">
                 <p><label>적립금</label></p>
-                <p style="color:green;">+{{selected_transaction.save_point}} P</p>
+                <p style="color:green;">+{{selected_transaction.save_point | number:'1.0-0'}} P</p>
             </div>
             <div class="item">
                 <p><label>분류</label></p>
@@ -70,7 +70,7 @@
                     <p [ngClass]="tr.point < 0 ? 'negative' : 'positive'" style="font-size:1.3em; font-weight: 550;">
                         {{tr.point | number:'1.0-0'}} P</p>
                     <p [ngClass]="tr.point < 0 ? 'negative' : 'positive'">{{tr.curr}} THB</p>
-                    <p style="color:green;">+{{tr.save_point}} P</p>
+                    <p style="color:green;">+{{tr.save_point | number:'1.0-0'}} P</p>
                 </div>
             </div>
         </div>
