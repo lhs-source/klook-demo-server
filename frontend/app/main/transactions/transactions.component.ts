@@ -12,6 +12,19 @@ export class TransactionsComponent implements OnInit {
   transactions = [];
   selected_transaction : any;
 
+  
+  icons = {
+    "백화점": "assets/images/ico_type2.png",
+    "편의점": "assets/images/ico_type3.png",
+    "식당": "assets/images/ico_type5.png",
+    "포인트충전": "assets/images/ico_type1.png",
+    "마트": "assets/images/ico_type4.png",
+    "스포츠": "assets/images/ico_type6.png",
+    "카페": "assets/images/ico_type7.png",
+    "포인트교환": "assets/images/ico_type8.png",
+    "교통카드충전": "assets/images/ico_type1.png",
+};
+
   constructor(private transactionsService : TransactionService) { }
 
   ngOnInit(): void {

@@ -5,7 +5,7 @@
         <div style="display: grid; grid-template-columns: 50% 50%; grid-auto-flow: row;">
             <div class="item" style="grid-row:1; grid-column: 1 / 3; margin-bottom: 16px;">
                 <p><label>가맹점명</label></p>
-                <p style="font-size: 1.1em; font-weight: 600;">{{selected_transaction.merchant}}</p>
+                <p style="font-size: 1.4em; font-weight: 500;">{{selected_transaction.merchant}}</p>
             </div>
             <div class="item">
                 <p><label>날짜</label></p>
@@ -31,7 +31,8 @@
             </div>
             <div class="item">
                 <p><label>분류</label></p>
-                <p>{{selected_transaction.class}}</p>
+                <p>{{selected_transaction.class}} <img src="{{icons[selected_transaction.class]}}" style="height:24px;">
+                </p>
             </div>
             <div class="item">
                 <p><label>설명</label></p>
@@ -53,20 +54,24 @@
         <div *ngFor="let tr of transactions; let index = index;" class="item" (click)="onClickItem($event, index)">
             <!-- <div style="display: grid;"> -->
             <div>
-                <p><label class="merchant">{{tr.merchant}}</label></p>
-                <p class="date">{{tr.date  | date:'yyyy년 MM월 dd일 HH시 mm분'}}</p>
-                <p>
-                    {{tr.description}}
-                    <span *ngIf="tr.taxfree" class="taxfree">TaxFree</span>
-                    <span *ngIf="tr.utu" class="utu">UTU</span>
-                </p>
+                <img src="{{icons[tr.class]}}" style="height:36px; margin-top: 8px;">
             </div>
-            <div style="display: flex; flex-direction: column; align-items: flex-end;">
-                <p [ngClass]="tr.point < 0 ? 'negative' : 'positive'" 
-                    style="font-size:1.3em; font-weight: 550;">
-                    {{tr.point}} P</p>
-                <p [ngClass]="tr.point < 0 ? 'negative' : 'positive'">{{tr.curr}} THB</p>
-                <p style="color:green;">+{{tr.save_point}} P</p>
+            <div class="item-flex">
+                <div>
+                    <p><label class="merchant">{{tr.merchant}}</label></p>
+                    <p class="date">{{tr.date  | date:'yyyy년 MM월 dd일 HH시 mm분'}}</p>
+                    <p>
+                        {{tr.description}}
+                        <span *ngIf="tr.taxfree" class="taxfree">TaxFree</span>
+                        <span *ngIf="tr.utu" class="utu">UTU</span>
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: flex-end;">
+                    <p [ngClass]="tr.point < 0 ? 'negative' : 'positive'" style="font-size:1.3em; font-weight: 550;">
+                        {{tr.point}} P</p>
+                    <p [ngClass]="tr.point < 0 ? 'negative' : 'positive'">{{tr.curr}} THB</p>
+                    <p style="color:green;">+{{tr.save_point}} P</p>
+                </div>
             </div>
         </div>
     </div>
