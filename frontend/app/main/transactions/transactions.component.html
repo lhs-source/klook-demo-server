@@ -19,7 +19,7 @@
                 <p><label>포인트</label></p>
                 <p [ngClass]="selected_transaction.point < 0 ? 'negative' : 'positive'"
                     style="font-size: 1.1em; font-weight: 600;">
-                    {{selected_transaction.point}} P
+                    {{selected_transaction.point | number:'1.0-0'}} P
                 </p>
                 <p [ngClass]="selected_transaction.point < 0 ? 'negative' : 'positive'">
                     {{selected_transaction.curr}} THB
@@ -68,7 +68,7 @@
                 </div>
                 <div style="display: flex; flex-direction: column; align-items: flex-end;">
                     <p [ngClass]="tr.point < 0 ? 'negative' : 'positive'" style="font-size:1.3em; font-weight: 550;">
-                        {{tr.point}} P</p>
+                        {{tr.point | number:'1.0-0'}} P</p>
                     <p [ngClass]="tr.point < 0 ? 'negative' : 'positive'">{{tr.curr}} THB</p>
                     <p style="color:green;">+{{tr.save_point}} P</p>
                 </div>
