@@ -50,10 +50,11 @@ $detail-width:480px;
         .item{
             // margin: 16px 0;
             padding:16px;
+            padding-bottom: 20px;
 
             display: grid;
             grid-auto-flow: column;
-            grid-template-columns: 64px 90%;
+            grid-template-columns: 84px 90%;
     
             &-flex{
                 display: flex; 
