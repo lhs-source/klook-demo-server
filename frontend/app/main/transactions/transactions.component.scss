@@ -1,13 +1,29 @@
-$maxwidth:720px;
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 
+div{
+    font-family: "Noto Sans KR";
+}
+
+$minwidth:720px;
+
+$header-height : 64px;
+$detail-width:480px;
 
 .frame{
-    max-width:$maxwidth; 
-    margin: 0 auto;
+    min-width:$minwidth; 
+
+    display: grid;
+    margin-right:64px;
 
     .selected-table{
-        background-color: #eee;
-        padding:16px;
+        background-color: #f4f4f4;
+        padding:32px;
+        width:$detail-width;
+        height:100%;
+
+        position: fixed;
+        top:$header-height ;
+        left:0px;
 
         p{margin:0;}
     
@@ -27,6 +43,7 @@ $maxwidth:720px;
     
     
     .list{
+        margin-left: $detail-width + 120px;
         p{
             margin:0;
         }
@@ -36,7 +53,7 @@ $maxwidth:720px;
 
             display: grid;
             grid-auto-flow: column;
-            grid-template-columns: auto 90%;
+            grid-template-columns: 64px 90%;
     
             &-flex{
                 display: flex; 
@@ -54,16 +71,16 @@ $maxwidth:720px;
             .taxfree{
                 background-color: rgb(100, 15, 15); 
                 color:whitesmoke; 
-                padding:0px 4px 3px 4px;
+                padding:3px 8px 4px 6px;
                 
                 border-radius: 4px; 
                 font-size: 0.9em; 
                 font-weight: 550;
             }
             .utu{
-                background-color: rgb(199, 230, 255); 
-                color:black; 
-                padding:0px 4px 3px 4px;
+                background-color: rgb(15, 73, 121); 
+                color:whitesmoke; 
+                padding:3px 8px 4px 6px;
     
                 border-radius: 4px;
                 font-size: 0.9em; 

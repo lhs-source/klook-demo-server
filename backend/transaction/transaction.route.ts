@@ -5,6 +5,8 @@ import TransactionController from "./transaction.controller";
 let tr_router = express.Router();
 let tr_cont = new TransactionController();
 
+
+tr_router.get('/token', tr_cont.getTokenInfo)
 tr_router.get('/', tr_cont.getAllOrderByDate)
             .post('/', tr_cont.insert)
             .post('/all', tr_cont.insertMultiTransactions);

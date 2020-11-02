@@ -31,6 +31,7 @@ export class TransactionsComponent implements OnInit {
     this.transactionsService.getAllTransactions().subscribe(
       res=>{
         this.transactions = res;
+        this.selected_transaction = this.transactions[0];
       },
       err=>{},
     );

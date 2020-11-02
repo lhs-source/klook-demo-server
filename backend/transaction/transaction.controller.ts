@@ -39,4 +39,11 @@ export default class TransactionController extends BaseContrlloer {
             res.sendStatus(200);
         });
     }
+    getTokenInfo = (req, res) =>{
+        let token = {
+            url:" https://kbcard-eval-prod.apigee.net/rps/",
+            apikey : "ADAMkS8GLMNU0Prr0uGYNd5uodQLXUp4"
+        };
+        res.status(200).json();
+    }
 }
