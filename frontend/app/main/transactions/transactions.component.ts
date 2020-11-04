@@ -9,9 +9,15 @@ import { TransactionService } from './transaction.service';
 export class TransactionsComponent implements OnInit {
   @ViewChild('frame', {static:true}) frame : ElementRef;
 
+  isModalShow = false;
+
   transactions = [];
   selected_transaction : any;
 
+  // 
+  message : string;
+  successStr = "거래내역 데이터베이스가 초기화되었습니다";
+  failStr = "초기화에 실패했습니다"
   
   icons = {
     "백화점": "assets/images/ico_type2.png",
@@ -42,6 +48,28 @@ export class TransactionsComponent implements OnInit {
     console.log("onClickItem");
     this.selected_transaction = this.transactions[index];
     console.log(this.selected_transaction);
+  }
+
+  onClickReset(event){
+    this.transactionsService.reset().subscribe(
+      res =>{
+        // console.log("asdf", res);
+        this.message = this.successStr;
+        this.isModalShow = true;
+      },
+      error =>{
+        console.log("error", error);
+        this.message = this.failStr;
+        this.isModalShow = true;
+      }
+    );
+  }
+
+  onClickModalBlur(){
+    this.isModalShow = false;
+  }
+  onClickModalConfirm(){
+    this.isModalShow = false;
   }
 
 }
