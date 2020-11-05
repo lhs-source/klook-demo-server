@@ -34,6 +34,10 @@ export class TransactionsComponent implements OnInit {
   constructor(private transactionsService : TransactionService) { }
 
   ngOnInit(): void {
+    this.getAllTransactions();
+  }
+
+  getAllTransactions(){
     this.transactionsService.getAllTransactions().subscribe(
       res=>{
         this.transactions = res;
@@ -41,7 +45,6 @@ export class TransactionsComponent implements OnInit {
       },
       err=>{},
     );
-    // console.log(this.frame.nativeElement);
   }
 
   onClickItem(event, index){
@@ -70,6 +73,7 @@ export class TransactionsComponent implements OnInit {
   }
   onClickModalConfirm(){
     this.isModalShow = false;
+    this.getAllTransactions();
   }
 
 }

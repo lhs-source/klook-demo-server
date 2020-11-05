@@ -78,6 +78,7 @@ $detail-width:480px;
     .list{
         margin-left: $detail-width + 120px;
         min-width: 640px;
+        padding-top: 32px; 
         p{
             margin:0;
         }
